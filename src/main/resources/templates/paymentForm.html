@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Page</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .payment-card {
+            display: inline-block;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .payment-options {
+            display: none;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .pay-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .option-button {
+            background-color: #008CBA;
+            color: white;
+        }
+    </style>
+    <script>
+        function showPaymentOptions() {
+            document.getElementById("payment-options").style.display = "block";
+        }
+
+        function payWithPaytm() {
+            window.location.href = "https://paytm.com/pay";
+        }
+        
+        function payWithGooglepay(){
+            window.location.href = "https://pay.google.com";
+        }
+        
+        function payWithPhonepay(){
+            window.location.href = "https://www.phonepe.com";
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="payment-card">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMWfKAvXXMXnNlN5R41gEkawbvXoELpd5WiK87S-ui8gS40ZlOJIBTd8dJ8IH_M2huhM&usqp=CAU" alt="Laptop Image">
+        <br>
+        <h1> ₹2000</h1><br>
+        <button class="pay-button" onclick="showPaymentOptions()">Pay</button>
+        <div id="payment-options" class="payment-options">
+            <h3>Select Payment Method</h3>
+            <button class="option-button" onclick="payWithPaytm()">PayTM</button>
+            <button class="option-button" onclick="payWithGooglepay()">Google Pay</button>
+            <button class="option-button" onclick="payWithPhonepay()">PhonePe</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
